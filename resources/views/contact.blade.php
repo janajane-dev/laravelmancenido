@@ -1,35 +1,37 @@
 <x-layout>
 
-    <div class="card">
+    <x-card id="contact">
 
         <h1>CONTACT</h1>
 
         <div class="info">
 
-        <p>
-        Thank you for listening to <strong>fitterkarma</strong>.
-        </p>
+            <p>
+                Thank you for listening to <strong>fitterkarma</strong>.
+            </p>
 
-        <p>
-        For collaborations, inquiries, or other concerns, you may reach out through:
-        </p>
+            <p>
+                For collaborations, inquiries, or other concerns, you may reach out through:
+            </p>
 
-        <p>
-        📧 Email:<br>
-        <a href="mailto:your@email.com">fitterkarma@email.com</a>
-        </p>
+            <p>
+                📧 Email:<br>
+                <a href="mailto:fitterkarma@email.com">fitterkarma@email.com</a>
+            </p>
 
-        <p>
-        📱 Facebook:<br>
-        <a href="#">facebook.com/fitterkarma</a>
-        </p>
+            <p>
+                📱 Facebook:<br>
+                <a href="#">facebook.com/fitterkarma</a>
+            </p>
 
-        <p>
-        🎵 Spotify / Streaming Platforms:<br>
-        Search <strong>fitterkarma</strong>
-        </p>
+            <p>
+                🎵 Spotify / Streaming Platforms:<br>
+                Search <strong>fitterkarma</strong>
+            </p>
 
-    </div>
+        </div>
+
+    </x-card>
 
 </x-layout>
 

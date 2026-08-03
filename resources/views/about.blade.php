@@ -1,29 +1,29 @@
 <x-layout>
 
-    <div class="card">
+    <x-card id="about">
 
         <h1>ABOUT FITTERKARMA</h1>
 
         <p>
-        <strong>fitterkarma</strong> is an independent Filipino music artist whose songs
-        blend emotion, spirituality, and introspection. Through heartfelt lyrics and
-        minimalistic production, the music explores themes of love, faith, hope,
-        regret, and self-discovery.
+            <strong>fitterkarma</strong> is an independent Filipino music artist whose songs
+            blend emotion, spirituality, and introspection. Through heartfelt lyrics and
+            minimalistic production, the music explores themes of love, faith, hope,
+            regret, and self-discovery.
         </p>
 
         <p>
-        The song <strong>"Kalapastangan"</strong> reflects a deep longing for God,
-        combining poetic storytelling with personal reflection. The lyrics portray
-        the journey of searching for purpose, redemption, and unwavering devotion.
+            The song <strong>"Kalapastangan"</strong> reflects a deep longing for God,
+            combining poetic storytelling with personal reflection. The lyrics portray
+            the journey of searching for purpose, redemption, and unwavering devotion.
         </p>
 
         <p>
-        Every release aims to create a space where listeners can connect with their
-        own experiences, whether they are seeking comfort, inspiration, or simply
-        music that speaks honestly to the heart.
+            Every release aims to create a space where listeners can connect with their
+            own experiences, whether they are seeking comfort, inspiration, or simply
+            music that speaks honestly to the heart.
         </p>
 
-    </div>
+    </x-card>
 
 </x-layout>
 

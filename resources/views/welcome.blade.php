@@ -1,16 +1,14 @@
 <x-layout>
 
-
-    <div class="card" id="lyrics">
+    <x-card id="lyrics">
 
         <h1>Kalapastangan</h1>
 
         <div class="artist">
-        by fitterkarma
+            by fitterkarma
         </div>
 
         <div class="lyrics">
-
             Oras nang sambahin ang ngalan Mo
             Para mabuhay habang-buhay sa puso't isipan Mo
             Sino ba ako para mapansin Mo?
@@ -38,33 +36,32 @@
             Ooh
             Ooh
         </div>
-    </div>
+
+    </x-card>
 
 </x-layout>
 
 <style>
+h1{
+    text-align:center;
+    font-size:3rem;
+    letter-spacing:8px;
+    margin-bottom:8px;
+}
 
-    h1{
-        text-align:center;
-        font-size:3rem;
-        letter-spacing:8px;
-        margin-bottom:8px;
-    }
+.artist{
+    text-align:center;
+    letter-spacing:5px;
+    color:#bbb;
+    margin-bottom:35px;
+}
 
-    .artist{
-        text-align:center;
-        letter-spacing:5px;
-        color:#bbb;
-        margin-bottom:35px;
-    }
-
-    .lyrics{
-        white-space:pre-line;
-        text-align:center;
-        line-height:2.1;
-        font-size:18px;
-        border-top:1px solid rgba(255,255,255,.15);
-        padding-top:25px;
-    }
-
+.lyrics{
+    white-space:pre-line;
+    text-align:center;
+    line-height:2.1;
+    font-size:18px;
+    border-top:1px solid rgba(255,255,255,.15);
+    padding-top:25px;
+}
 </style>
