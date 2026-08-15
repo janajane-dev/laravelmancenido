@@ -2,25 +2,24 @@
 
     <x-card id="about">
 
-        <h1>ABOUT FITTERKARMA</h1>
+        <h1>ABOUT OPM</h1>
 
         <p>
-            <strong>fitterkarma</strong> is an independent Filipino music artist whose songs
-            blend emotion, spirituality, and introspection. Through heartfelt lyrics and
-            minimalistic production, the music explores themes of love, faith, hope,
-            regret, and self-discovery.
+            <strong>Original Pilipino Music (OPM)</strong> is a diverse and evolving part of Filipino culture that 
+            reflects the experiences, emotions, stories, and identity of the Filipino people. It encompasses different
+            genres and styles, from classic ballads and folk music to pop, rock, indie, hip-hop, and contemporary sounds.
         </p>
 
         <p>
-            The song <strong>"Kalapastangan"</strong> reflects a deep longing for God,
-            combining poetic storytelling with personal reflection. The lyrics portray
-            the journey of searching for purpose, redemption, and unwavering devotion.
+            More than entertainment, OPM serves as a way for Filipino artists to express personal experiences, social realities, 
+            love, faith, hope, and everyday life. Through Filipino lyrics, melodies, and storytelling, OPM continues to 
+            connect generations and give Filipino voices a place in the local and global music scene.
         </p>
 
         <p>
-            Every release aims to create a space where listeners can connect with their
-            own experiences, whether they are seeking comfort, inspiration, or simply
-            music that speaks honestly to the heart.
+            Today, OPM continues to grow as new artists experiment with different sounds while preserving the emotional 
+            storytelling that makes Filipino music unique. It remains a meaningful expression of 
+            Filipino creativity, culture, and identity
         </p>
 
     </x-card>

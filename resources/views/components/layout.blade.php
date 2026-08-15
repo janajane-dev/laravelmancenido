@@ -135,7 +135,8 @@ body::before{
 <body>
 
 <nav class="navbar">
-    <a href="/">Welcome</a>
+    <a href="/">Songs</a>
+    <a href="{{ route('songs.create') }}">Add Song</a>
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
 </nav>

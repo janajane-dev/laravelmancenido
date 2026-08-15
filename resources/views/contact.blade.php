@@ -1,50 +1,50 @@
-<x-layout>
+<x-layout> 
 
-    <x-card id="contact">
+    <x-card id="contact"> 
 
-        <h1>CONTACT</h1>
+        <h1>CONTACT</h1> 
 
-        <div class="info">
+        <div class="info"> 
 
-            <p>
-                Thank you for listening to <strong>fitterkarma</strong>.
-            </p>
+            <p> 
+                Thank you for exploring <strong>Original Pilipino Music (OPM)</strong>. 
+            </p> 
 
-            <p>
-                For collaborations, inquiries, or other concerns, you may reach out through:
-            </p>
+            <p> 
+                For inquiries, suggestions, collaborations, or other concerns, you may reach out through: 
+            </p> 
 
-            <p>
+            <p> 
                 📧 Email:<br>
-                <a href="mailto:fitterkarma@email.com">fitterkarma@email.com</a>
-            </p>
+                <a href="mailto:opm@email.com">opm@email.com</a> 
+            </p> 
 
-            <p>
+            <p> 
                 📱 Facebook:<br>
-                <a href="#">facebook.com/fitterkarma</a>
-            </p>
+                <a href="#">facebook.com/OPM</a> 
+            </p> 
 
-            <p>
-                🎵 Spotify / Streaming Platforms:<br>
-                Search <strong>fitterkarma</strong>
-            </p>
+            <p> 
+                🎵 Spotify / Streaming Platforms:<br> 
+                Discover Filipino artists and songs on Spotify and other streaming platforms. 
+            </p> 
 
-        </div>
+        </div> 
 
-    </x-card>
+    </x-card> 
 
-</x-layout>
+</x-layout> 
 
-<style>
-h1{
-    text-align:center;
-    letter-spacing:6px;
-    margin-bottom:30px;
-}
+<style> 
+h1{ 
+    text-align:center; 
+    letter-spacing:6px; 
+    margin-bottom:30px; 
+} 
 
-.info{
-    text-align:center;
-    line-height:2;
-    color:#ddd;
-}
+.info{ 
+    text-align:center; 
+    line-height:2; 
+    color:#ddd; 
+} 
 </style>
