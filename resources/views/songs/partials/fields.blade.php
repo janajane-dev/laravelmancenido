@@ -15,7 +15,7 @@
 
 <div class="field">
     <label for="artist">Artist</label>
-    <input type="text" name="artist" id="artist" value="{{ old('artist', $song->artist ?? 'fitterkarma') }}">
+    <input type="text" name="artist" id="artist" value="{{ old('artist', $song->artist ?? '') }}">
 </div>
 
 <div class="field">
