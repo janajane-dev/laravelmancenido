@@ -19,13 +19,17 @@
                 </button>
             </form>
 
-            <a href="{{ route('songs.edit', $song) }}" class="btn">Edit</a>
+            @can('update', $song)
+                <a href="{{ route('songs.edit', $song) }}" class="btn">Edit</a>
+            @endcan
 
-            <form action="{{ route('songs.destroy', $song) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this song?')">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </form>
+            @can('delete', $song)
+                <form action="{{ route('songs.destroy', $song) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this song?')">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            @endcan
 
             <a href="{{ route('songs.index') }}" class="btn btn-ghost">← Back to Songs</a>
         </div>

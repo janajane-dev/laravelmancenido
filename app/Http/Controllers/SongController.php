@@ -34,18 +34,22 @@ class SongController extends Controller
 
     public function store(StoreSongRequest $request)
     {
-        $song = Song::create($request->validated());
+        $song = $request->user()->songs()->create($request->validated());
 
         return redirect()->route('songs.show', $song)->with('success', 'Song added.');
     }
 
     public function edit(Song $song)
     {
+        $this->authorize('update', $song);
+
         return view('songs.edit', ['song' => $song]);
     }
 
     public function update(UpdateSongRequest $request, Song $song)
     {
+        $this->authorize('update', $song);
+
         $song->update($request->validated());
 
         return redirect()->route('songs.show', $song)->with('success', 'Song updated.');
@@ -62,6 +66,8 @@ class SongController extends Controller
 
     public function destroy(Song $song)
     {
+        $this->authorize('delete', $song);
+
         $song->delete();
 
         return redirect()->route('songs.index')->with('success', 'Song deleted.');

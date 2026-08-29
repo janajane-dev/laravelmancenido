@@ -82,6 +82,27 @@ body::before{
     color:#000;
 }
 
+.logout-form{
+    display:inline;
+}
+
+.logout-form button{
+    background:none;
+    border:none;
+    color:#d8d8d8;
+    padding:10px 18px;
+    border-radius:999px;
+    font-family:inherit;
+    font-size:inherit;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.logout-form button:hover{
+    background:#fff;
+    color:#000;
+}
+
 .container{
     width:90%;
     max-width:900px;
@@ -135,10 +156,22 @@ body::before{
 <body>
 
 <nav class="navbar">
-    <a href="/">Songs</a>
-    <a href="{{ route('songs.create') }}">Add Song</a>
+    @auth
+        <a href="/">Songs</a>
+        <a href="{{ route('songs.create') }}">Add Song</a>
+    @endauth
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
+
+    @guest
+        <a href="{{ route('login') }}">Login</a>
+        <a href="{{ route('register') }}">Register</a>
+    @else
+        <form action="{{ route('logout') }}" method="POST" class="logout-form">
+            @csrf
+            <button type="submit">Logout</button>
+        </form>
+    @endguest
 </nav>
 
 <div class="container">

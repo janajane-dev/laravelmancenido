@@ -20,6 +20,11 @@ class Song extends Model
         'is_favorite' => 'boolean',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function scopeSearch($query, ?string $term)
     {
         if (! $term) {
