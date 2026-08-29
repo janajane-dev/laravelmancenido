@@ -11,13 +11,15 @@
         <div class="lyrics">{{ $song->lyrics }}</div>
 
         <div class="actions">
-            <form action="{{ route('songs.favorite', $song) }}" method="POST">
-                @csrf
-                @method('PATCH')
-                <button type="submit" class="btn {{ $song->is_favorite ? 'btn-fav-active' : '' }}">
-                    {{ $song->is_favorite ? '★ Favorited' : '☆ Favorite' }}
-                </button>
-            </form>
+            @auth
+                <form action="{{ route('songs.favorite', $song) }}" method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <button type="submit" class="btn {{ $isFavorited ? 'btn-fav-active' : '' }}">
+                        {{ $isFavorited ? '★ Favorited' : '☆ Favorite' }}
+                    </button>
+                </form>
+            @endauth
 
             @can('update', $song)
                 <a href="{{ route('songs.edit', $song) }}" class="btn">Edit</a>

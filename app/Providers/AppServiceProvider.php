@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
         // Gate demo (Episode 17). Ito ang naunang paraan bago nagpalit sa Policy sa Episode 18.
         // Ang actual na ginagamit sa SongController ay ang SongPolicy sa taas.
         Gate::define('update-song', function (User $user, Song $song) {
-            return $user->id === $song->user_id;
+            return $user->is_admin;
         });
     }
 }

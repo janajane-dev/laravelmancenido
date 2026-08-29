@@ -156,10 +156,10 @@ body::before{
 <body>
 
 <nav class="navbar">
-    @auth
-        <a href="/">Songs</a>
+    <a href="/">Songs</a>
+    @can('create', \App\Models\Song::class)
         <a href="{{ route('songs.create') }}">Add Song</a>
-    @endauth
+    @endcan
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
 

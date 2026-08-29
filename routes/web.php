@@ -4,6 +4,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SongController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', [SongController::class, 'index']);
+
 Route::get('/about', function () {
     return view('about');
 });
@@ -21,10 +23,11 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', [SongController::class, 'index']);
-
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::patch('/songs/{song}/favorite', [SongController::class, 'favorite'])->name('songs.favorite');
-    Route::resource('songs', SongController::class);
+    Route::resource('songs', SongController::class)->except(['index', 'show']);
 });
+
+// Registered after the auth group so GET /songs/create isn't shadowed by GET /songs/{song}
+Route::resource('songs', SongController::class)->only(['index', 'show']);

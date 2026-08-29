@@ -4,7 +4,9 @@
 
         <div class="header-row">
             <h1>SONGS</h1>
-            <a href="{{ route('songs.create') }}" class="btn">+ Add Song</a>
+            @can('create', \App\Models\Song::class)
+                <a href="{{ route('songs.create') }}" class="btn">+ Add Song</a>
+            @endcan
         </div>
 
         @if (session('success'))
@@ -36,13 +38,17 @@
 
         @forelse ($songs as $song)
             <div class="song-row">
-                <form action="{{ route('songs.favorite', $song) }}" method="POST" class="fav-form">
-                    @csrf
-                    @method('PATCH')
-                    <button type="submit" class="fav-btn" title="{{ $song->is_favorite ? 'Unfavorite' : 'Favorite' }}">
-                        {{ $song->is_favorite ? '★' : '☆' }}
-                    </button>
-                </form>
+                @auth
+                    <form action="{{ route('songs.favorite', $song) }}" method="POST" class="fav-form">
+                        @csrf
+                        @method('PATCH')
+                        <button type="submit" class="fav-btn" title="{{ in_array($song->id, $favoriteSongIds) ? 'Unfavorite' : 'Favorite' }}">
+                            {{ in_array($song->id, $favoriteSongIds) ? '★' : '☆' }}
+                        </button>
+                    </form>
+                @else
+                    <span class="fav-btn" title="Log in to favorite">☆</span>
+                @endauth
 
                 <a href="{{ route('songs.show', $song) }}" class="song-title">{{ $song->title }}</a>
                 <span class="song-artist">{{ $song->artist }}</span>
@@ -52,7 +58,7 @@
                 @if ($q)
                     No songs match "{{ $q }}".
                 @else
-                    No songs yet. Add your first one!
+                    No songs yet.
                 @endif
             </p>
         @endforelse

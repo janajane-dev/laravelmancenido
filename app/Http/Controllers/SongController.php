@@ -15,25 +15,41 @@ class SongController extends Controller
             ->sort($request->query('sort'))
             ->get();
 
+        $favoriteSongIds = auth()->check()
+            ? auth()->user()->favorites()->pluck('songs.id')->toArray()
+            : [];
+
         return view('songs.index', [
             'songs' => $songs,
             'q' => $request->query('q', ''),
             'sort' => $request->query('sort', 'latest'),
+            'favoriteSongIds' => $favoriteSongIds,
         ]);
     }
 
     public function show(Song $song)
     {
-        return view('songs.show', ['song' => $song]);
+        $isFavorited = auth()->check()
+            ? auth()->user()->favorites()->where('song_id', $song->id)->exists()
+            : false;
+
+        return view('songs.show', [
+            'song' => $song,
+            'isFavorited' => $isFavorited,
+        ]);
     }
 
     public function create()
     {
+        $this->authorize('create', Song::class);
+
         return view('songs.create');
     }
 
     public function store(StoreSongRequest $request)
     {
+        $this->authorize('create', Song::class);
+
         $song = $request->user()->songs()->create($request->validated());
 
         return redirect()->route('songs.show', $song)->with('success', 'Song added.');
@@ -57,11 +73,17 @@ class SongController extends Controller
 
     public function favorite(Song $song)
     {
-        $song->update(['is_favorite' => ! $song->is_favorite]);
+        $user = auth()->user();
 
-        return back()->with('success', $song->is_favorite
-            ? 'Added to favorites.'
-            : 'Removed from favorites.');
+        if ($user->favorites()->where('song_id', $song->id)->exists()) {
+            $user->favorites()->detach($song);
+            $message = 'Removed from favorites.';
+        } else {
+            $user->favorites()->attach($song);
+            $message = 'Added to favorites.';
+        }
+
+        return back()->with('success', $message);
     }
 
     public function destroy(Song $song)

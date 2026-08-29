@@ -13,16 +13,16 @@ class Song extends Model
         'title',
         'artist',
         'lyrics',
-        'is_favorite',
-    ];
-
-    protected $casts = [
-        'is_favorite' => 'boolean',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function favoritedBy()
+    {
+        return $this->belongsToMany(User::class, 'favorites')->withTimestamps();
     }
 
     public function scopeSearch($query, ?string $term)
